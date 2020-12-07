@@ -2,7 +2,7 @@
   background-color: aliceblue;
   padding: 1rem;
   // height: 100vh;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  // font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   display: grid;
     grid-template-areas:
     "ta ta"
@@ -30,12 +30,14 @@
 }
 
 .video-item {
-  background-color: #fdf;
+  background-color: #fff;
   width: 95%;
   min-height: 100px;
   margin: auto;
   padding: 3px;
   border: 2px solid #ccc;
+  display: flex !important;
+  align-items: center;
   // place-self: center;
 }
 .video-details {

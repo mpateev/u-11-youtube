@@ -1,14 +1,14 @@
-import React from 'react'
+import React from "react";
 
-export default function VideoDetails() {
+export default function VideoDetails({ video }) {
   return (
     <div className="video-details">
       <div className="video-window">
         <h1>Video plays here</h1>
       </div>
       <div className="video-description">
-        <p>Here we place comments about the video itself</p>
+        <p>{video ? video.snippet.description : ""}</p>
       </div>
     </div>
-  )
+  );
 }
