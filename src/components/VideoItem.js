@@ -1,8 +1,8 @@
 import React from "react";
 
-export default function VideoItem({ video }) {
+export default function VideoItem({ video, onVideoSelect }) {
   return (
-    <div className="item video-item">
+    <div className="video-item item" onClick={() => onVideoSelect(video)}>
       <img
         className="ui image"
         src={video.snippet.thumbnails.default.url}

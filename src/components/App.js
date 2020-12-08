@@ -6,6 +6,7 @@ import youtube from "../api/youtube";
 
 export default function App() {
   const [items, setItems] = useState([]);
+  const [selectedVideo, setSelectedVideo] = useState(null);
 
   const onTermSubmit = async (term) => {
     const response = await youtube.get("/search", {
@@ -16,13 +17,17 @@ export default function App() {
     setItems(response.data.items);
   };
 
+  const onVideoSelect = (video) => {
+    setSelectedVideo(video);
+  };
+
   return (
     <div className="ui container">
       <div className="app">
-        <h1 className="ui app-head">YouTube Search App</h1>
+        <h1 className="app-head">YouTube Search App</h1>
         <SearchBar onTermSubmit={onTermSubmit} />
-        <VideoDetails video={items[0]} />
-        <VideoList videos={items} />
+        <VideoList onVideoSelect={onVideoSelect} videos={items} />
+        <VideoDetails video={selectedVideo} />
       </div>
     </div>
   );
