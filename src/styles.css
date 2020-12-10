@@ -1,62 +1,6 @@
-.app {
-  background-color: aliceblue;
-}
-
-.app-head {
-  grid-area: ta;
-}
-
-.search-bar {
-  grid-area: sb;
-  background-color: #cff;
-}
-
-.video-list {
-  grid-area: vl;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
 .video-item {
-  background-color: #fff;
-  width: 95%;
-  min-height: 100px;
-  margin: auto;
-  padding: 3px;
-  border: 2px solid #ccc;
   display: -webkit-box !important;
   display: -ms-flexbox !important;
   display: flex !important;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   cursor: pointer;
-}
-
-.video-details {
-  grid-area: vd;
-  background-color: #ffd;
-}
-
-.video-window {
-  background-color: #eee;
-  background-image: url("https://source.unsplash.com/random");
-  min-height: 200px;
-  min-width: 300px;
-  margin: 1rem;
-  padding: 2rem;
-}
-
-.video-list h1 {
-  margin: 1rem;
-  font-size: 14;
-}
-
-.video-description {
-  background-color: #fff;
 }

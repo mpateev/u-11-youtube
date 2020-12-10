@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SearchBar from "./SearchBar";
 import VideoDetails from "./VideoDetails";
 import VideoList from "./VideoList";
@@ -14,20 +14,30 @@ export default function App() {
         q: term,
       },
     });
-    setItems(response.data.items);
+    setSelectedVideo(response.data.items[0]);
+    setItems(response.data.items.slice(1));
   };
 
   const onVideoSelect = (video) => {
     setSelectedVideo(video);
   };
 
+  useEffect(() => {
+    onTermSubmit("doberman");
+  }, []);
   return (
     <div className="ui container">
-      <div className="app">
-        <h1 className="app-head">YouTube Search App</h1>
-        <SearchBar onTermSubmit={onTermSubmit} />
-        <VideoList onVideoSelect={onVideoSelect} videos={items} />
-        <VideoDetails video={selectedVideo} />
+      {/* <h1 className="">YouTube Search App</h1> */}
+      <SearchBar onTermSubmit={onTermSubmit} />
+      <div className="ui grid">
+        <div className="ui row">
+          <div className="twelve wide column">
+            <VideoDetails video={selectedVideo} />
+          </div>
+          <div className="four wide column">
+            <VideoList onVideoSelect={onVideoSelect} videos={items} />
+          </div>
+        </div>
       </div>
     </div>
   );

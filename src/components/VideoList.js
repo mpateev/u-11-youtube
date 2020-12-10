@@ -11,7 +11,5 @@ export default function VideoList({ videos, onVideoSelect }) {
       />
     );
   });
-  return (
-    <div className="video-list ui relaxed divided list">{renderedList}</div>
-  );
+  return <div className="ui relaxed divided list">{renderedList}</div>;
 }

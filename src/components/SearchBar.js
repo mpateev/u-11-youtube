@@ -3,7 +3,7 @@ import React, { useState } from "react";
 export default function SearchBar({ onTermSubmit }) {
   const [term, setTerm] = useState("");
   return (
-    <div className="ui segment search-bar">
+    <div className="ui segment">
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -12,7 +12,7 @@ export default function SearchBar({ onTermSubmit }) {
         className="ui form"
       >
         <div className="ui field">
-          <label htmlFor="term">Video Search</label>
+          <label htmlFor="term">Youtube Video Search</label>
           <input
             type="text"
             name="term"
